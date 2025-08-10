@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניהול סידור עבודה וחלוקת טיפים</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="loginScreen">
+    <h1>התחברות</h1>
+    <input type="text" id="username" placeholder="שם משתמש">
+    <input type="password" id="password" placeholder="סיסמה">
+    <select id="role">
+      <option value="manager">מנהל</option>
+      <option value="worker">עובד</option>
+    </select>
+    <button onclick="login()">התחבר</button>
+  </div>
+
+  <div class="container hidden" id="managerScreen">
+    <h1>מסך מנהל</h1>
+    <button onclick="showScheduleForm()">הוסף משמרת</button>
+    <button onclick="showTipForm()">עדכן טיפים</button>
+    <div id="managerContent"></div>
+    <button class="logout" onclick="logout()">התנתק</button>
+  </div>
+
+  <div class="container hidden" id="workerScreen">
+    <h1>מסך עובד</h1>
+    <div id="workerSchedule"></div>
+    <div id="workerTips"></div>
+    <button class="logout" onclick="logout()">התנתק</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
